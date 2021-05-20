@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+	<Properties>
+		<Property name="patternfull">
+			%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{5} - %msg%n
+		</Property>
+		<Property name="patternshort">
+			%d{HH:mm:ss.SSS} [%t] %-5level %logger{1} - %msg%n
+		</Property>
+	</Properties>
+	<Appenders>
+		<File name="TxtFile" fileName="logs/text.log" bufferedIO="true">
+			<PatternLayout pattern="${patternfull}" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${patternshort}" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="Console"/>
+		</Root>
+		<Logger name="by.training.entities.ThirdTask" level="error"
+				additivity="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TxtFile" />
+		</Logger>
+		<Logger name="by.training.entities.EleventhTask" level="error"
+				additivity="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TxtFile" />
+		</Logger>
+		<Logger name="by.training.entities.NineteenthTask" level="error"
+				additivity="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TxtFile" />
+		</Logger>
+		<Logger name="by.training.entities.TwentySeventhTask" level="error"
+				additivity="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TxtFile" />
+		</Logger>
+		<Logger name="by.training.entities.ThirtyFifthTask" level="error"
+				additivity="true">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="TxtFile" />
+		</Logger>
+	</Loggers>
+</Configuration>
