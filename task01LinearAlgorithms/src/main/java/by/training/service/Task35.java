@@ -1,6 +1,6 @@
-package by.training.entities;
+package by.training.service;
 
-public class ThirtyFifthTask {
+public class Task35 {
     private int m;
     private int n;
     /**

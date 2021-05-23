@@ -1,6 +1,6 @@
-package by.training.entities;
+package by.training.service;
 
-public class ThirdTask {
+public class Task3 {
 
     private double x;
     private double y;
@@ -21,7 +21,7 @@ public class ThirdTask {
     }
 
     /**
-     * The function {@link ThirdTask#calculate} finds the value of an expression z=2*x+(y-2)*5
+     * The function {@link Task3#calculate} finds the value of an expression z=2*x+(y-2)*5
      * @return double value that is calculation result
      */
 

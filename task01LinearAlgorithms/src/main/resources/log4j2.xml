@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="INFO">
 	<Properties>
 		<Property name="patternfull">
-			%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{5} - %msg%n
+			%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{4} - %msg%n
 		</Property>
 		<Property name="patternshort">
 			%d{HH:mm:ss.SSS} [%t] %-5level %logger{1} - %msg%n
@@ -17,32 +17,27 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Root level="DEBUG">
+		<Root level="INFO">
 			<AppenderRef ref="Console"/>
 		</Root>
-		<Logger name="by.training.entities.ThirdTask" level="error"
+		<Logger name="by.training.service.Task3" level="error"
 				additivity="true">
-			<AppenderRef ref="Console" />
 			<AppenderRef ref="TxtFile" />
 		</Logger>
-		<Logger name="by.training.entities.EleventhTask" level="error"
+		<Logger name="by.training.service.Task11" level="error"
 				additivity="true">
-			<AppenderRef ref="Console" />
 			<AppenderRef ref="TxtFile" />
 		</Logger>
-		<Logger name="by.training.entities.NineteenthTask" level="error"
+		<Logger name="by.training.service.Task19" level="error"
 				additivity="true">
-			<AppenderRef ref="Console" />
 			<AppenderRef ref="TxtFile" />
 		</Logger>
-		<Logger name="by.training.entities.TwentySeventhTask" level="error"
+		<Logger name="by.training.service.Task27" level="error"
 				additivity="true">
-			<AppenderRef ref="Console" />
 			<AppenderRef ref="TxtFile" />
 		</Logger>
-		<Logger name="by.training.entities.ThirtyFifthTask" level="error"
+		<Logger name="by.training.service.Task35" level="error"
 				additivity="true">
-			<AppenderRef ref="Console" />
 			<AppenderRef ref="TxtFile" />
 		</Logger>
 	</Loggers>

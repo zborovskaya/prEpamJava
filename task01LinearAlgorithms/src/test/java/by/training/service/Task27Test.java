@@ -1,11 +1,11 @@
-package by.training.entities;
+package by.training.service;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TwentySeventhTaskTest {
-TwentySeventhTask twentySeventhTask= new TwentySeventhTask();
+public class Task27Test {
+Task27 task27 = new Task27();
 @DataProvider(name="value")
 public Object[][] createDataForFunction() {
     return new Object[][] {
@@ -19,8 +19,8 @@ public Object[][] createDataForFunction() {
     @Test(description = "Positive and negative numbers dataset for function test",
             dataProvider = "value")
     public void testCalculate(double input, double[]  answer) {
-        twentySeventhTask.setA(input);
-        double[] result= twentySeventhTask.calculate();
+        task27.setA(input);
+        double[] result= task27.calculate();
         System.out.println(input);
         System.out.println(answer[0]+":"+answer[1]);
         Assert.assertEquals(result, answer, 0.01);

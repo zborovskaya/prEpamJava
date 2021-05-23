@@ -1,10 +1,10 @@
-package by.training.entities;
+package by.training.service;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class NineteenthTask {
-    static final Logger logger = LogManager.getLogger(NineteenthTask.class.getName());
+public class Task19 {
+    static final Logger logger = LogManager.getLogger(Task19.class.getName());
     private double a;
     private boolean bool=true;
 

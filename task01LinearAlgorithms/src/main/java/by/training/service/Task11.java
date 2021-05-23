@@ -1,10 +1,10 @@
-package by.training.entities;
+package by.training.service;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class EleventhTask {
-    static final Logger logger = LogManager.getLogger(EleventhTask.class.getName());
+public class Task11 {
+    static final Logger logger = LogManager.getLogger(Task11.class.getName());
     private double a;
     private double b;
     private boolean bool=true;
@@ -29,7 +29,8 @@ public class EleventhTask {
         if(value > 0) {
             b = value;
         } else {
-            logger.error("Negative leg a!");
+            bool=false;
+            logger.error("Negative leg b!");
         }
     }
 

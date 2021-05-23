@@ -1,6 +1,6 @@
-package by.training.entities;
+package by.training.service;
 
-public class TwentySeventhTask {
+public class Task27 {
     private double a;
     /**
      *The function sets the value of the field a
