@@ -123,9 +123,12 @@ public class Runner {
                     task35.setM(m);
                     task35.setN(n);
                     int[] result = task35.calculate();
-                    System.out.println(" Least significant digit of integer part: " + result[0]);
-                    System.out.println("The most significant digit of the fractional part: " + result[1]);
-                    logger.info("Task completed successfully");
+                    if(result!=null) {
+                        System.out.println("Least significant digit of integer part: " + result[0]);
+                        System.out.println("The most significant digit of the fractional part: " + result[1]);
+                        logger.info("Task completed successfully");
+                    }
+
                     break;
                 }
                 case 6: {

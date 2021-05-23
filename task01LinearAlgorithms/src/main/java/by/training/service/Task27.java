@@ -22,8 +22,8 @@ public class Task27 {
         double[] result = new double[2];
         double a2 = a * a;
         double a4 = a2 * a2;
-        result[0] = a4 * a4;
-        result[1] = result[0] * a2;
+        result[0] = a4 * a4; //a8
+        result[1] = result[0] * a2; //a10
         return result;
     }
 }

@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 public class Task19 {
     static final Logger logger = LogManager.getLogger(Task19.class.getName());
     private double a;
-    private boolean bool=true;
+    private boolean bool;
 
     /**
      *The function sets the value of the field a
@@ -15,9 +15,10 @@ public class Task19 {
 
     public void setA(double value) {
         if(value > 0) {
+            this.bool=true;
             a = value;
         } else {
-            bool=false;
+            this.bool=false;
             logger.error("Negative leg a!");
         }
     }

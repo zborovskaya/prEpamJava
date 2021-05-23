@@ -7,7 +7,8 @@ public class Task11 {
     static final Logger logger = LogManager.getLogger(Task11.class.getName());
     private double a;
     private double b;
-    private boolean bool=true;
+    private boolean boolA;
+    private boolean boolB;
 
     /**
      *The function sets the value of the field a
@@ -16,8 +17,9 @@ public class Task11 {
     public void setA(double value) {
         if(value > 0) {
             a = value;
+            this.boolA=true;
         } else {
-            bool=false;
+            this.boolA=false;
             logger.error("Negative leg a!");
         }
     }
@@ -28,8 +30,9 @@ public class Task11 {
     public void setB(double value) {
         if(value > 0) {
             b = value;
+            this.boolB=true;
         } else {
-            bool=false;
+            this.boolB=false;
             logger.error("Negative leg b!");
         }
     }
@@ -43,7 +46,7 @@ public class Task11 {
      * @return perimeter value
      */
     public double getPerimeter() {
-        if (bool) {
+        if (this.boolA && this.boolB) {
             return (Math.sqrt(a * a + b * b) + a + b);
         }
         else {
@@ -57,7 +60,7 @@ public class Task11 {
      * @return square value
      */
     public double getSquare(){
-        if (bool) {
+        if (this.boolA && this.boolB) {
             return (a*b/2);
         }
         else {

@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 
 public class Task27Test {
 Task27 task27 = new Task27();
-@DataProvider(name="value")
-public Object[][] createDataForFunction() {
+@DataProvider(name="dataForTestCalculate")
+public Object[][] createDataForTestCalculate() {
     return new Object[][] {
             {2,new double[]{256.0,1024.0}},
             {0,new double[]{0.0,0.0}},
@@ -16,13 +16,11 @@ public Object[][] createDataForFunction() {
 
     };
 }
-    @Test(description = "Positive and negative numbers dataset for function test",
-            dataProvider = "value")
+    @Test(description = "Positive and negative numbers dataset for Calculate test",
+            dataProvider = "dataForTestCalculate")
     public void testCalculate(double input, double[]  answer) {
         task27.setA(input);
         double[] result= task27.calculate();
-        System.out.println(input);
-        System.out.println(answer[0]+":"+answer[1]);
         Assert.assertEquals(result, answer, 0.01);
     }
 }

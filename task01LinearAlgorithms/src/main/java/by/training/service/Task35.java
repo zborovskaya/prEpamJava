@@ -1,10 +1,15 @@
 package by.training.service;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class Task35 {
+    static final Logger logger = LogManager.getLogger(Task11.class.getName());
     private int m;
     private int n;
+
     /**
-     *The function sets the value of the field m
+     * The function sets the value of the field m
+     *
      * @param m is double value
      */
     public void setM(int m) {
@@ -12,12 +17,14 @@ public class Task35 {
     }
 
     /**
-     *The function sets the value of the field n
+     * The function sets the value of the field n
+     *
      * @param n is double value
      */
     public void setN(int n) {
         this.n = n;
     }
+
     /**
      * The function calculates the most significant digit of the fractional part and
      * the least significant digit of the integer part of the number M / N.
@@ -26,15 +33,23 @@ public class Task35 {
      * It is the least significant digit of the integer part.
      * Multiply the result by 10 and find the remainder of 10.
      * It is the most significant digit of the fractional part.
+     *
      * @return an array of calculated results
      */
 
     public int[] calculate() {
         int[] output = new int[2];
-        double result= (double) m / n;
-        System.out.println(m + " / " + n + " = " + result);
-        output[0] = (int) (result % 10);
-        output[1] = (int) ((result * 10) % 10);
-        return output;
+        if (n == 0) {
+            logger.error("Division by 0!");
+            return null;
+        }
+        else {
+            double result = (double) m / n;
+            System.out.println(m + " / " + n + " = " + result);
+            output[0] = (int) (result % 10);
+            output[1] = (int) ((result * 10) % 10);
+            return output;
+        }
+
     }
 }
