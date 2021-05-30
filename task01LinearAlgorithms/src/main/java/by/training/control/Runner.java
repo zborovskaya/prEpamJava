@@ -55,7 +55,7 @@ public class Runner {
                 }
                 case 2: {
                     logger.info("User chose Task 11");
-                    System.out.println("Enter a and press <Enter> & number and b <Enter>:");
+                    System.out.println("Enter a and press <Enter> &  b and press <Enter>:");
                     double a = scan.nextDouble();
                     double b = scan.nextDouble();
                     Task11 task11 = new Task11();
@@ -116,7 +116,7 @@ public class Runner {
                 }
                 case 5: {
                     logger.info("User chose Task 35");
-                    System.out.println("Enter m and press <Enter> & number and n <Enter>:");
+                    System.out.println("Enter m and press <Enter> &  n and press <Enter>:");
                     int m = scan.nextInt();
                     int n = scan.nextInt();
                     Task35 task35 = new Task35();
