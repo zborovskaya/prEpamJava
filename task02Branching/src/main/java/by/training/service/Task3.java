@@ -15,3 +15,4 @@ public class Task3 {
         else return "no";
     }
 }
+

@@ -26,7 +26,7 @@ public class Task11Test {
     public void testGetPerimeter(double[] input, double answer) {
         task11.setA(input[0]);
         task11.setB(input[1]);
-        double result= task11.getPerimeter();
+        double result= task11.calculatePerimeter();
         Assert.assertEquals(result, answer, 0.01);
     }
 

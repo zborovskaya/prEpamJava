@@ -61,7 +61,8 @@ public class Runner {
                     Task11 task11 = new Task11();
                     task11.setA(a);
                     task11.setB(b);
-                    double p= task11.getPerimeter();
+                    //TODO проверка данных
+                    double p= task11.calculatePerimeter();
                     if (p!=0.0){
                     System.out.println("Perimeter is " + p);
                     logger.info("Function completed successfully");

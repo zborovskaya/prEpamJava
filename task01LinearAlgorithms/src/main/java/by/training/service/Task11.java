@@ -45,7 +45,7 @@ public class Task11 {
      * Find the perimeter.
      * @return perimeter value
      */
-    public double getPerimeter() {
+    public double calculatePerimeter() {
         if (this.boolA && this.boolB) {
             return (Math.sqrt(a * a + b * b) + a + b);
         }

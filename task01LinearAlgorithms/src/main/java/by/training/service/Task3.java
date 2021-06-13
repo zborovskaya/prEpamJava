@@ -21,7 +21,7 @@ public class Task3 {
     }
 
     /**
-     * The function {@link Task3#calculate} finds the value of an expression z=2*x+(y-2)*5
+     * The function {@link Task3#calculate} finds the value of an expression z=2*x+(y-2)*5    z(x,y)=a*x+(y-b)*c
      * @return double value that is calculation result
      */
 

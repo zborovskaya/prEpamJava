@@ -6,6 +6,7 @@ public class Task35 {
      * Calculate day and month
      * @param day
      * @return date
+     * @return null, if day does not exist
      */
 
     public int[] findDate(int day) {

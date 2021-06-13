@@ -1,14 +1,14 @@
-package by.training.creator;
+package by.training.service.creator;
 
-import by.training.service.task11.Triangle;
-import by.training.exception.TriangleException;
+import by.training.entity.Triangle;
+import by.training.service.exception.TriangleException;
 public class TriangleCreator {
 
     /**
      * Create triangle
-     * @param a
-     * @param b
-     * @param c
+     * @param a - side of the triangle
+     * @param b- side of the triangle
+     * @param c- side of the triangle
      * @return
      * @throws TriangleException
      */
@@ -26,12 +26,11 @@ public class TriangleCreator {
 
     /**
      * Check data
-     * @param a
-     * @param b
-     * @param c
+     * @param a - side of the triangle
+     * @param b- side of the triangle
+     * @param c- side of the triangle
      * @return true or false
      */
-
 
     private boolean isValid(double a, double b, double c)
     {

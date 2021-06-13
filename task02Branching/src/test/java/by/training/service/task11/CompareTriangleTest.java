@@ -3,10 +3,8 @@ package by.training.service.task11;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
+import by.training.entity.Triangle;
 public class CompareTriangleTest {
-
-    CompareTriangle compareTriangle=new CompareTriangle();
 
     @DataProvider(name="dataForTestCompareSquare")
     public Object[][] createDataForCompareSquare() {
@@ -20,9 +18,9 @@ public class CompareTriangleTest {
 
     @Test(description = "Positive and negative numbers dataset for CompareSquare test",
             dataProvider = "dataForTestCompareSquare")
-    public void testCompareSquare(Triangle[] input,int answer) {
+    public void testCompareSquare(Triangle[] input, int answer) {
 
-        int result= compareTriangle.compareSquare(input[0],input[1] );
+        int result= CompareTriangle.compareSquare(input[0],input[1]);
         Assert.assertEquals(result, answer);
 
 

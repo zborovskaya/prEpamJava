@@ -1,22 +1,25 @@
 package by.training.service.task11;
 
+import by.training.entity.Triangle;
+
 public class CompareTriangle {
 
     /**
-     * Function compare triangle
-     * @param first
-     * @param second
+     * Function compare triangles
+     * @param first triangle
+     * @param second first triangle
      * @return 1 if First triangle larger second
      *         0 equal
      *         -1 if Second triangle larger first
      */
 
-    public int compareSquare(Triangle first,Triangle second)
+    public static int compareSquare(Triangle first, Triangle second)
     {
-        if (first.calculateSquare()>second.calculateSquare()) return 1;
+
+        if (TriangleOperation.calculateSquare(first)>TriangleOperation.calculateSquare(second)) return 1;
         else
             {
-                if (first.calculateSquare()==second.calculateSquare()) return 0;
+                if (TriangleOperation.calculateSquare(first)==TriangleOperation.calculateSquare(second)) return 0;
                 else return -1;
             }
 
