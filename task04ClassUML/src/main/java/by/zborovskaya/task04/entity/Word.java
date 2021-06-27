@@ -6,7 +6,7 @@ public class Word {
     public Word(String value) {
         this.value = value;
     }
-    public void replaceWord(String value){this.value = value;}
+    public void setWord(String value){this.value = value;}
     public String getValue() {
         return value;
     }

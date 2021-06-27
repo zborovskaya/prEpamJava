@@ -2,7 +2,7 @@ package by.zborovskaya.task04.dao;
 
 public class DAOFactory {
     private static final DAOFactory instance = new DAOFactory();
-    private final TextDAO txtDao = new TextRealizationDAO();
+    private final TextDAO txtDao = new TextDAORealization();
 
     private DAOFactory() {}
 

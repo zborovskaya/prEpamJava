@@ -4,23 +4,16 @@ public class UserText {
     private String headline;
     private String textBody;
 
-    public UserText(){
-        headline="";
-        textBody="";
-    }
-
     public UserText(Word word) {
 
         headline = word.getValue();
         textBody="";
     }
-
     public UserText(Sentence sentence) {
+
         headline = sentence.getValue();
         textBody="";
     }
-
-    public void addWord(Word word) {textBody += word.getValue()+" ";}
 
     public void addSentence(Sentence sentence) {
         textBody += sentence.getValue();

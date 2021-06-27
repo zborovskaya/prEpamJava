@@ -2,19 +2,22 @@ package by.zborovskaya.task04.dao;
 import by.zborovskaya.task04.entity.Sentence;
 import by.zborovskaya.task04.entity.UserText;
 import by.zborovskaya.task04.entity.Word;
-import by.zborovskaya.task04.view.ViewMain;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class TextRealizationDAO implements TextDAO{
-    private static final Logger logger = LogManager.getLogger(ViewMain.class);
-    String path="C:/Users/zav/IdeaProjects/prEpamJava/task04ClassUML/src/main/data/dataFile.txt";
+public class TextDAORealization implements TextDAO{
+    private static final Logger logger = LogManager.getLogger(TextDAORealization.class);
+    private String path="C:/Users/zav/IdeaProjects/prEpamJava/task04ClassUML/src/main/data/dataFile.txt";
     Scanner scanner;
     PrintWriter pw ;
 
+    /**
+     * The method fills the userText entity with data from a file( read file)
+     * @return userText
+     */
     public UserText readData() {
         Word word;
         Sentence sentence= new Sentence();
@@ -28,7 +31,7 @@ public class TextRealizationDAO implements TextDAO{
                 sentence.setValue(str);
                 while (str.indexOf('.')==-1 && str.indexOf('!')==-1 && str.indexOf('?')==-1 && scanner.hasNext()) {
                     str = scanner.next();
-                    word.replaceWord(str);
+                    word.setWord(str);
                     sentence.addWord(word);
                 }
                 text.addSentence(sentence);
@@ -40,6 +43,10 @@ public class TextRealizationDAO implements TextDAO{
         return text;
     }
 
+    /**
+     * The method makes the file empty
+     */
+
     public void clearData() {
         try {
             PrintWriter pw = new PrintWriter(path);
@@ -50,6 +57,10 @@ public class TextRealizationDAO implements TextDAO{
         }
     }
 
+    /**
+     * The method reads information from a file into a class object UserText
+     * @param text
+     */
     public void writeData(UserText text) {
         clearData();
         String header = text.getHeadline();

@@ -11,8 +11,9 @@ import java.util.Scanner;
 
 /**
  * @author Zborovskaya Anna
- * Class {@code Main} starts tasks
- *
+ * Class {@code ViewMain} starts tasks
+ *The view forms a request - a string of a certain type, passes it to the controller
+ * and waits for a response.
  */
 
 public class ViewMain {
@@ -31,7 +32,7 @@ public class ViewMain {
             langChoosing.put(2, MessageManager.EN);
             System.out.println("Choose language: \n1)RU \n2)EN");
             int choice = scan.nextInt();
-            if (choice!=1 || choice!=2) throw new Exception("You can choose only 1 or 2");
+            if (choice!=1 && choice!=2) throw new Exception("You can choose only 1 or 2");
             MessageManager current = langChoosing.get(choice);
             System.out.println(current.getString("menu"));
             choice = scan.nextInt();
@@ -63,7 +64,7 @@ public class ViewMain {
                     break;
                 }
                 default:
-                    logger.error("You can choose only 1-6");
+                    logger.error(current.getString("errorMenu"));
                     break;
             }
             Controller controller = new Controller();

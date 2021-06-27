@@ -9,15 +9,19 @@ import by.zborovskaya.task04.view.ViewMain;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TextRealizationService implements TextService{
-    private static final Logger logger = LogManager.getLogger(ViewMain.class);
+public class TextServiceRealization implements TextService{
+    private static final Logger logger = LogManager.getLogger(TextServiceRealization.class);
 
     DAOFactory daoObjectFactory = DAOFactory.getInstance();
     TextDAO textRealizationDAO = daoObjectFactory.getTextRealizationDAO();
-    UserText userText=null;
 
+    /**
+     * The method sends a request for a file to the DAO,
+     * receives an object userText of the class and prints the Text's header to the console
+     * @return Text's header
+     */
     public String readHeadline(){
-        userText=textRealizationDAO.readData();
+        UserText userText=textRealizationDAO.readData();
         if( userText.getHeadline()=="") {
             logger.error("Headline is empty");
         } else {
@@ -25,8 +29,14 @@ public class TextRealizationService implements TextService{
         }
         return userText.getHeadline();
     }
+
+    /**
+     * The method sends a request for a file to the DAO,
+     * receives an object userText of the class and prints the Text  to the console
+     * @return Text
+     */
     public String showText(){
-        userText=textRealizationDAO.readData();
+        UserText userText=textRealizationDAO.readData();
         if(userText.getTextBody()==""&& userText.getHeadline()==""){
             logger.error("User try to enter empty File");
         }else {
@@ -34,9 +44,15 @@ public class TextRealizationService implements TextService{
         }
         return userText.toString();
     }
+
+    /**
+     * The method asks for the original text
+     * and removes new information in the text
+     * @param textBody - user data
+     */
     public void addText(String textBody){
 
-        userText=textRealizationDAO.readData();
+        UserText  userText=textRealizationDAO.readData();
         Sentence sentence= new Sentence();
         String[] words = textBody.split(" ");
         int i=0;
@@ -54,6 +70,13 @@ public class TextRealizationService implements TextService{
         textRealizationDAO.writeData(userText);
 
     }
+
+    /**
+     * The method creates a UserText object
+     * and sends the object to DAO for writing to a file
+     * @param headline- user data
+     * @param textBody- user data
+     */
 
    public void createNewText(String  headline, String textBody){
        Word head = new Word(headline);
@@ -75,6 +98,10 @@ public class TextRealizationService implements TextService{
        textRealizationDAO.writeData(userText);
 
    }
+
+    /**
+     * The method clears the data from the file
+     */
     public void clearText(){
         textRealizationDAO.clearData();
     }
