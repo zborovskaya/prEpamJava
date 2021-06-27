@@ -70,7 +70,4 @@ public class Array {
                 "values=" + Arrays.toString(values) +
                 '}';
     }
-
-
-
 }
