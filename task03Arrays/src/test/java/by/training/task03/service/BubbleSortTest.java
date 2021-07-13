@@ -8,8 +8,8 @@ public class BubbleSortTest {
 
     @Test
     public void testSortIncOrder() {
-        Array array = new Array(new int[] {5, 7, 20, 44, 4, 78, 1, 55, 3});
-        Array expected = new Array(new int[] {1, 3, 4, 5, 7, 20, 44, 55, 78});
+        Array array = new Array(new int[] {4, -7, 8, 100, 0, 6, 55, 44, 57});
+        Array expected = new Array(new int[] {-7, 0, 4, 6, 8, 44, 55, 57, 100});
 
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(array, true);
@@ -18,8 +18,8 @@ public class BubbleSortTest {
 
     @Test
     public void testSortDecrOrder() {
-        Array array = new Array(new int[] {5, 7, 20, 44, 4, 78, 1, 55, 3});
-        Array expected = new Array(new int[] {78, 55, 44, 20, 7, 5, 4, 3, 1});
+        Array array = new Array(new int[] {4, -7, 8, 100, 0, 6, 55, 44, 57});
+        Array expected = new Array(new int[] {100, 57, 55, 44, 8, 6, 4, 0, -7});
 
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(array, false);

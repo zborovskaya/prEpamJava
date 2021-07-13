@@ -38,7 +38,6 @@ public class TextDAORealization implements TextDAO{
             }
         } catch (Exception e ) {
             logger.error("Exception caught in TextRealizationDAO class in method readData().");
-            e.printStackTrace();
         }
         return text;
     }
@@ -53,7 +52,6 @@ public class TextDAORealization implements TextDAO{
             pw.close();
         } catch (Exception e) {
             logger.error("Exception caught in TextRealizationDAO class in method clearData().");
-            e.printStackTrace();
         }
     }
 
@@ -72,7 +70,6 @@ public class TextDAORealization implements TextDAO{
             pw.close();
         } catch (Exception e ) {
             logger.error("Exception caught in TextRealizationDAO class in method writeData().");
-            e.printStackTrace();
         }
     }
 }

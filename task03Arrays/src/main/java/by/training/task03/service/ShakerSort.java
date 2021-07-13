@@ -17,6 +17,7 @@ public class ShakerSort implements Sorting{
                 for (int i = leftSide; i < rightSide; i++) { // Сортир. влево ищем МАКС. знач.
                     if (array.getValue(i) > array.getValue(i + 1)) {
                         array.swap(i, i + 1);
+                        //TODO позиция последнего обмена
                     }
                 }
                 rightSide--; // Уменьшаем количество проходов

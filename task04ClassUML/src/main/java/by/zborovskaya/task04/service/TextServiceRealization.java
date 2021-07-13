@@ -12,8 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class TextServiceRealization implements TextService{
     private static final Logger logger = LogManager.getLogger(TextServiceRealization.class);
 
-    DAOFactory daoObjectFactory = DAOFactory.getInstance();
-    TextDAO textRealizationDAO = daoObjectFactory.getTextRealizationDAO();
+    private final TextDAO textRealizationDAO = DAOFactory.getInstance().getTextRealizationDAO();
 
     /**
      * The method sends a request for a file to the DAO,

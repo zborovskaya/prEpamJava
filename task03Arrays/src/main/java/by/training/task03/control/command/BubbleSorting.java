@@ -28,7 +28,8 @@ public class BubbleSorting implements Command{
             bubbleSort.sort(array,order);
             repositoryArray.setArray(array);
             repositoryArray.putArrayIntoFile();
-            response = "Sorting completed successfully";
+            //TODO completed
+            response = "Sorting completed";
         } catch (ServiceException e) {
             logger.error(e.getMessage());
             response = "Error in performing sorting";

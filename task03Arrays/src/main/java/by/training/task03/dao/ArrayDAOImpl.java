@@ -3,7 +3,7 @@ package by.training.task03.dao;
 import java.io.*;
 import java.util.*;
 
-public class TxtArrayDAO implements ArrayDAO {
+public class ArrayDAOImpl implements ArrayDAO {
 
     //Укажите свой файл
     String initTxt = "C:/Users/zav/IdeaProjects/prEpamJava/task03Arrays/src/main/data/inputData.txt";
