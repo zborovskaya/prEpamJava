@@ -1,8 +1,5 @@
-package by.zborovskaya.task05.dao;
+package by.zborovskaya.task06.dao;
 
-import by.zborovskaya.task05.dao.exception.DAOException;
-import by.zborovskaya.task05.entity.Cone;
-import by.zborovskaya.task05.service.repository.ConeRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,17 +11,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ConeDAOImpl implements ConeDAO {
-    static final Logger logger = LogManager.getLogger(ConeDAOImpl.class);
-    // path = "./task05Lambda/data/dataCone.txt"
-
+public class MatrixDAOImpl implements MatrixDAO{
+    static final Logger logger = LogManager.getLogger(MatrixDAOImpl.class);
     /**
      * Function read data from file
      * @param path
      * @return
      */
+
     @Override
     public List<String> readData(String path) {
+        //String PATH="./task06Concurrency/data/dataMatrix.txt"
 
         List<String> list = new ArrayList<>();
 
@@ -35,13 +32,5 @@ public class ConeDAOImpl implements ConeDAO {
             e.printStackTrace();
         }
         return list;
-    }
-
-    @Override
-    public void writeData(String path, Cone cone) {
-    }
-
-    @Override
-    public void clearData(String path) {
     }
 }
