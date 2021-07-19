@@ -7,7 +7,7 @@ import java.util.concurrent.Phaser;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class FillingDiagonalFourth extends Thread {
+public class FillingDiagonalPhaser extends Thread {
     final TimeUnit milliUnit = TimeUnit.MILLISECONDS;
     private int x;
     private SquareMatrix matrix;
@@ -15,7 +15,7 @@ public class FillingDiagonalFourth extends Thread {
     private Phaser phaser;
     private  int numberOfPhases;
 
-    public FillingDiagonalFourth(int x, ReentrantLock locker, SquareMatrix matrix, Phaser phaser,int numberOfPhases) {
+    public FillingDiagonalPhaser(int x, ReentrantLock locker, SquareMatrix matrix, Phaser phaser, int numberOfPhases) {
         this.matrix = matrix;
         this.x = x;
         this.locker = locker;
@@ -36,23 +36,29 @@ public class FillingDiagonalFourth extends Thread {
         int sizeOfMatrix=matrix.getSize();
         int i=0;
         for(int number=0; number<numberOfPhases; number++){
-//                System.out.println(Thread.currentThread().getName() + "start" + phaser.getPhase() + "Phase");
-                try {
+            try {
+//                System.out.println("Phaser "+number);
+                while (i <sizeOfMatrix) {
                     locker.lock();
-
-                    while (matrix.getElement(i, i) != 0 && (i<sizeOfMatrix)) {
-//                        System.out.println(Thread.currentThread().getName() +
-//                                "i=" + i);
+                    if (matrix.getElement(i, i) == 0) {
+                        matrix.setElement(i,i,x);
+//                        System.out.println(Thread.currentThread().getName()+"устнавливает значение "+x+" на позицию"+i);
+                        milliUnit.sleep(25);
+                        locker.unlock();
+                        break;
+                    }
+                    else {
+                        locker.unlock();
                         i++;
                     }
-                    if(i<sizeOfMatrix) { matrix.setElement(i, i, x);
-                        System.out.println(Thread.currentThread().getName() +
-                                "устнавливает значение " + x + " на позицию" + i);}
-                    locker.unlock();
-//                    System.out.println("Phase " + phaser.getPhase() + " end");
-                    phaser.arriveAndAwaitAdvance();
-                } catch (MatrixException e) {
+
                 }
+            }catch (MatrixException e){}
+            catch(InterruptedException ex){
+                locker.unlock();
+                System.out.println(ex.getMessage());
+            }
+            phaser.arriveAndAwaitAdvance();
         }
     }
 }

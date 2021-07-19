@@ -6,7 +6,7 @@ import by.zborovskaya.task06.service.exception.MatrixException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-public class FillingDiagonalThird implements Runnable{
+public class FillingDiagonal implements Runnable{
     private final TimeUnit milliUnit = TimeUnit.MILLISECONDS;
     private int x;
     private SquareMatrix matrix;
@@ -14,7 +14,7 @@ public class FillingDiagonalThird implements Runnable{
     private int numberOfThreads;
     private CountDownLatch countDownLatch;
 
-    public FillingDiagonalThird(int x, SquareMatrix matrix, int index,int numberOfThreads,CountDownLatch countDownLatch) {
+    public FillingDiagonal(int x, SquareMatrix matrix, int index, int numberOfThreads, CountDownLatch countDownLatch) {
         this.matrix=matrix;
         this.x = x;
         this.index=index;
@@ -34,7 +34,7 @@ public class FillingDiagonalThird implements Runnable{
         try {
             while(index<matrix.getSize()) {
                 matrix.setElement(index, index, x);
-                System.out.println(Thread.currentThread().getName()+"устнавливает значение "+x+" на позицию"+index);
+//                System.out.println(Thread.currentThread().getName()+"устнавливает значение "+x+" на позицию"+index);
                 index+=numberOfThreads;
             }
             countDownLatch.countDown();

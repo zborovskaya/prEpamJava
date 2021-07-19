@@ -4,7 +4,7 @@ import by.zborovskaya.task06.dao.DAOFactory;
 import by.zborovskaya.task06.entity.SquareMatrix;
 import by.zborovskaya.task06.service.parser.DataParser;
 import by.zborovskaya.task06.service.validator.ThreadsValidator;
-import by.zborovskaya.task06.service.fillingDiagonal.FillingDiagonalSecond;
+import by.zborovskaya.task06.service.fillingDiagonal.FillingDiagonalSem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,15 +25,15 @@ public class ThreadsCreatorSecond {
      * @return
      */
 
-    public ArrayList<FillingDiagonalSecond> create(String pathThread, SquareMatrix matrix) {
-        ArrayList<FillingDiagonalSecond> t = null;
+    public ArrayList<FillingDiagonalSem> create(String pathThread, SquareMatrix matrix) {
+        ArrayList<FillingDiagonalSem> t = null;
         try {
             List<String> data = DAOFactory.getInstance().getMatrixDAOImpl().readData(pathThread);
             if (validator.isValid(data)) {
                 t = new ArrayList<>();
                 for (int i = 1; i < data.size(); i++) {
                     int[] param = dataParser.create(data.get(i));
-                    t.add(i - 1,new FillingDiagonalSecond(param[0], sem, matrix));
+                    t.add(i - 1,new FillingDiagonalSem(param[0], sem, matrix));
                 }
             }
         } catch (Exception ex){

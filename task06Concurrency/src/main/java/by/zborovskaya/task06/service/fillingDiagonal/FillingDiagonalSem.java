@@ -6,13 +6,13 @@ import by.zborovskaya.task06.service.exception.MatrixException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-public class FillingDiagonalSecond extends Thread{
+public class FillingDiagonalSem extends Thread{
     final TimeUnit milliUnit = TimeUnit.MILLISECONDS;
     private int x;
     private SquareMatrix matrix;
     Semaphore sem;
 
-    public FillingDiagonalSecond(int x, Semaphore sem, SquareMatrix matrix) {
+    public FillingDiagonalSem(int x, Semaphore sem, SquareMatrix matrix) {
         this.matrix=matrix;
         this.x = x;
         this.sem=sem;
@@ -30,11 +30,11 @@ public class FillingDiagonalSecond extends Thread{
         try {
 
             for (int i = 0; i < matrix.getSize(); i++) {
-                System.out.println(Thread.currentThread().getName() + " ожидает разрешение");
+//                System.out.println(Thread.currentThread().getName() + " ожидает разрешение");
                 sem.acquire();
                 if (matrix.getElement(i, i) == 0) {
                     matrix.setElement(i,i,x);
-                    System.out.println(Thread.currentThread().getName()+"устнавливает значение "+x+" на позицию "+i);
+//                    System.out.println(Thread.currentThread().getName()+"устнавливает значение "+x+" на позицию "+i);
                     milliUnit.sleep(50);
                 }
                 sem.release();
