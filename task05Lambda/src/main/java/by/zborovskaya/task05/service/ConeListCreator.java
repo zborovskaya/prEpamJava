@@ -4,7 +4,6 @@ import by.zborovskaya.task05.dao.ConeDAO;
 import by.zborovskaya.task05.dao.DAOFactory;
 import by.zborovskaya.task05.entity.Cone;
 import by.zborovskaya.task05.service.exception.InputException;
-import by.zborovskaya.task05.service.repository.ConeRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConeListCreator {
-    static final Logger logger = LogManager.getLogger(ConeRepository.class);
+    static final Logger logger = LogManager.getLogger(ConeListCreator.class);
     private DAOFactory daoObject = DAOFactory.getInstance();
     private ConeDAO coneDAOImpl = daoObject.getConeDAOImpl();
     private ConeCreator creator= new ConeCreator();
