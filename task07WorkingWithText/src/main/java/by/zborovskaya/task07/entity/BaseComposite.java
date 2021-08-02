@@ -1,6 +1,7 @@
 package by.zborovskaya.task07.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 abstract public class BaseComposite implements ComponentText{
@@ -20,6 +21,11 @@ abstract public class BaseComposite implements ComponentText{
     public ComponentText getChild(int index) {
         return components.get(index);
     }
+
+
+    public ArrayList<ComponentText> getListOfChildren(){return components;}
+
+    public abstract BaseComposite clone();
 
     @Override
     public String collect(String del) {

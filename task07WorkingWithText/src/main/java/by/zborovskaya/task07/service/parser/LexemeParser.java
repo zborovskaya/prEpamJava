@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LexemeParser extends Handler {
-    private static final String WORD_PATTERN ="\\.{3}|!\\?|\\?!|[-!?:;,.]|(?<=[a-zA-Z])\\)|[a-zA-Z]+|\\((?=[a-zA-Z])";
+    private static final String WORD_PATTERN ="(\\(?)([a-zA-Z]+(-?))+(\\)?)|\\.{3}|!\\?|\\?!|[-!?:;,.]";
     private static final String EXPRESSION_PATTERN = "[\\d/*+=|^><&~()]([^a-zA-Z]*)[-\\d/*+=|^><&~()]";
     private static final String LEXEME_PATTERN =WORD_PATTERN+"|"+EXPRESSION_PATTERN;
 

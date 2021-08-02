@@ -10,4 +10,13 @@ public class CompositeSentence extends BaseComposite {
     public String collect(String del) {
         return super.collect(" ");
     }
+
+    @Override
+    public CompositeSentence clone() {
+        CompositeSentence composite = new CompositeSentence();
+        for (ComponentText component : getListOfChildren()) {
+            composite.add(component);
+        }
+        return composite;
+    }
 }

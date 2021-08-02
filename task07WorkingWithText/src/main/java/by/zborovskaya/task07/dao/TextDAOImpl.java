@@ -67,8 +67,7 @@ public class TextDAOImpl implements TextDAO{
 //        Pattern pattern = Pattern.compile("\\.{3}|\\!\\?|\\?!|[-!?:;,.]|(?<=[a-zA-Z])\\)|[a-zA-Z]+");
 
 // Регулярное выражение для выражения
-        Pattern pattern = Pattern.compile("[\\d/*+=|^><&~()]([^a-zA-Z]*)[-\\d/*+=|^><&~]|"
-                        +"\\.{3}|!\\?|\\?!|[-!?:;,.]|(?<=[a-zA-Z])\\)|[a-zA-Z]+");
+        Pattern pattern = Pattern.compile("(\\(?)([a-zA-Z]+(-?))+(\\)?)|\\.{3}|!\\?|\\?!|[-!?:;,.]");
 
         Matcher matcher = pattern.matcher(data);
         while(matcher.find())

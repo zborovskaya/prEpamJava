@@ -10,4 +10,13 @@ public class CompositeWord extends BaseComposite {
     public String collect(String del) {
         return super.collect("");
     }
+
+    @Override
+    public CompositeWord clone() {
+        CompositeWord composite = new CompositeWord();
+        for (ComponentText component : getListOfChildren()) {
+            composite.add(component);
+        }
+        return composite;
+    }
 }
