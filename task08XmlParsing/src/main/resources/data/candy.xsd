@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.zborovskaya.by/task08/entities"
+        xmlns:tns="http://www.zborovskaya.by/task08/entities"
+        elementFormDefault="qualified">
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element ref="tns:candy"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="candy" type="tns:Candy" abstract="true"></element>
+    <element name="chocolateCandy" type="tns:ChocolateCandy" substitutionGroup="tns:candy"></element>
+    <element name="caramelCandy" type="tns:CaramelCandy" substitutionGroup="tns:candy"></element>
+
+    <complexType name="Candy">
+        <sequence>
+            <element name="name" type="string" />
+            <element name="energy" type="positiveInteger" />
+            <element name="production" type="string" />
+            <element name="value" type="tns:Value" />
+        </sequence>
+        <attribute name="marking" type="tns:Marking" use="required"/>
+    </complexType>
+
+    <complexType name="ChocolateCandy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <sequence>
+                    <element name="ingredientsChocolate" type="tns:IngredientsChocolate" />
+                </sequence>
+                <attribute name="filling" type="string" use="optional" default="nothing">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="nothing"></enumeration>
+                            <enumeration value="fruit"></enumeration>
+                            <enumeration value="nutty"></enumeration>
+                            <enumeration value="dairy"></enumeration>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="CaramelCandy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <sequence>
+                    <element name="ingredientsCaramel" type="tns:Ingredients" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Value">
+        <all>
+            <element name="proteins" type="decimal"/>
+            <element name="fats" type="decimal"/>
+            <element name="carbohydrates" type="decimal"/>
+        </all>
+    </complexType>
+
+    <element name="ingredients" type="tns:Ingredients" abstract="true"></element>
+    <element name="ingredientsChocolate" type="tns:IngredientsChocolate" substitutionGroup="tns:ingredients"></element>
+    <element name="ingredientsCaramel" type="tns:Ingredients" substitutionGroup="tns:ingredients"></element>
+    <complexType name="Ingredients">
+        <all>
+            <element name="water" type="decimal" />
+            <element name="sugar" type="decimal" />
+            <element name="fructose" type="decimal" />
+            <element name="vanillin" type="decimal" />
+        </all>
+    </complexType>
+
+    <complexType name="IngredientsChocolate">
+        <complexContent>
+            <extension base="tns:Ingredients">
+                <all>
+                    <element name="chocolateType" type="tns:ChocolateType" />
+                </all>
+            </extension>
+        </complexContent>
+    </complexType>
+    <simpleType name="ChocolateType">
+        <restriction base="string">
+            <enumeration value="milk"></enumeration>
+            <enumeration value="dark"></enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="Marking">
+        <restriction base="ID">
+            <pattern value="([a-zA-Z])[a-zA-Z0-9]{6,10}"/>
+        </restriction>
+    </simpleType>
+</schema>

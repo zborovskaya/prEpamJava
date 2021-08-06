@@ -1,6 +1,7 @@
 package by.zborovskaya.task07.entity;
 
 public class CompositeLexeme extends BaseComposite {
+    private final  String DELIMITER_LEXEME="";
 
     public CompositeLexeme() {
         super();
@@ -8,7 +9,7 @@ public class CompositeLexeme extends BaseComposite {
 
     @Override
     public String collect(String del) {
-        return super.collect("");
+        return super.collect(DELIMITER_LEXEME);
     }
     @Override
     public CompositeLexeme clone() {

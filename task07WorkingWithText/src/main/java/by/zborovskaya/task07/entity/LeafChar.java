@@ -3,6 +3,7 @@ package by.zborovskaya.task07.entity;
 import java.util.ArrayList;
 
 public class LeafChar implements ComponentText{
+    private final  String DELIMiTER_SYMBOL="";
     private char symbol;
 
     public LeafChar(char symbol) {
@@ -20,7 +21,7 @@ public class LeafChar implements ComponentText{
     }
 
     public String collect(String del) {
-        return "" + symbol;
+        return DELIMiTER_SYMBOL + symbol;
     }
 
 

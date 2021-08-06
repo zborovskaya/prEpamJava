@@ -1,7 +1,6 @@
 package by.zborovskaya.task07.entity;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 abstract public class BaseComposite implements ComponentText{

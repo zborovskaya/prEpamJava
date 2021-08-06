@@ -1,6 +1,7 @@
 package by.zborovskaya.task07.entity;
 
 public class CompositeSentence extends BaseComposite {
+    private final  String DELIMiTER_SENTENCE=" ";
 
     public CompositeSentence() {
         super();
@@ -8,7 +9,7 @@ public class CompositeSentence extends BaseComposite {
 
     @Override
     public String collect(String del) {
-        return super.collect(" ");
+        return super.collect(DELIMiTER_SENTENCE);
     }
 
     @Override

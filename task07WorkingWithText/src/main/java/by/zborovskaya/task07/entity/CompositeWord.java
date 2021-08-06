@@ -1,6 +1,7 @@
 package by.zborovskaya.task07.entity;
 
 public class CompositeWord extends BaseComposite {
+    private final  String DELIMiTER_WORD="";
 
     public CompositeWord() {
         super();
@@ -8,7 +9,7 @@ public class CompositeWord extends BaseComposite {
 
     @Override
     public String collect(String del) {
-        return super.collect("");
+        return super.collect(DELIMiTER_WORD);
     }
 
     @Override
