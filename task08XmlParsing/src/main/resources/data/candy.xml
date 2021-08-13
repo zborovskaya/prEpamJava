@@ -1,8 +1,9 @@
-<?xml version ="1.0" encoding = "UTF 8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.zborovskaya.by/task08/entities"
          xsi:schemaLocation="http://www.zborovskaya.by/task08/entities candy.xsd">
     <caramelCandy marking="chupa1234">
+        <dateProduction>2020-09-24</dateProduction>
         <name>Chupa-Chups</name>
         <energy>380</energy>
         <production>Chupa-Chups</production>
@@ -19,6 +20,7 @@
         </ingredientsCaramel>
     </caramelCandy>
     <chocolateCandy marking="shapka1235">
+        <dateProduction>2021-05-24</dateProduction>
         <name>Little Red Riding Hood</name>
         <energy>300</energy>
         <production>Kommunarka</production>
@@ -36,6 +38,7 @@
         </ingredientsChocolate>
     </chocolateCandy>
     <chocolateCandy filling="nutty" marking="nuts5678" >
+        <dateProduction>2021-04-24</dateProduction>
         <name>Сhocolate covered nut</name>
         <energy>350</energy>
         <production>Kommunarka</production>
@@ -53,6 +56,7 @@
         </ingredientsChocolate>
     </chocolateCandy>
     <chocolateCandy marking="aer7234">
+        <dateProduction>2021-03-24</dateProduction>
         <name>Aeroflot</name>
         <energy>350</energy>
         <production>Spartac</production>
@@ -70,6 +74,7 @@
         </ingredientsChocolate>
     </chocolateCandy>
     <chocolateCandy marking="cherry56" filling="fruit">
+        <dateProduction>2021-02-24</dateProduction>
         <name>Cherry candy</name>
         <energy>230</energy>
         <production>Spartac</production>
@@ -79,14 +84,15 @@
             <carbohydrates>59</carbohydrates>
         </value>
         <ingredientsChocolate>
-            <sugar>20</sugar>
             <water>10</water>
-            <chocolateType>dark</chocolateType>
+            <sugar>20</sugar>
             <fructose>0</fructose>
             <vanillin>0</vanillin>
+            <chocolateType>dark</chocolateType>
         </ingredientsChocolate>
     </chocolateCandy>
     <caramelCandy marking="fizzy786">
+        <dateProduction>2021-01-24</dateProduction>
         <name>Fizzy Boom</name>
         <energy>230</energy>
         <production>Roshen</production>

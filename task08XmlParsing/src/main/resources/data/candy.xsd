@@ -19,6 +19,7 @@
 
     <complexType name="Candy">
         <sequence>
+            <element name="dateProduction" type="date"/>
             <element name="name" type="string" />
             <element name="energy" type="positiveInteger" />
             <element name="production" type="string" />
@@ -33,7 +34,7 @@
                 <sequence>
                     <element name="ingredientsChocolate" type="tns:IngredientsChocolate" />
                 </sequence>
-                <attribute name="filling" type="string" use="optional" default="nothing">
+                <attribute name="filling" use="optional" default="nothing">
                     <simpleType>
                         <restriction base="string">
                             <enumeration value="nothing"></enumeration>
@@ -69,20 +70,20 @@
     <element name="ingredientsChocolate" type="tns:IngredientsChocolate" substitutionGroup="tns:ingredients"></element>
     <element name="ingredientsCaramel" type="tns:Ingredients" substitutionGroup="tns:ingredients"></element>
     <complexType name="Ingredients">
-        <all>
+        <sequence>
             <element name="water" type="decimal" />
             <element name="sugar" type="decimal" />
             <element name="fructose" type="decimal" />
             <element name="vanillin" type="decimal" />
-        </all>
+        </sequence>
     </complexType>
 
     <complexType name="IngredientsChocolate">
         <complexContent>
             <extension base="tns:Ingredients">
-                <all>
+                <sequence>
                     <element name="chocolateType" type="tns:ChocolateType" />
-                </all>
+                </sequence>
             </extension>
         </complexContent>
     </complexType>
