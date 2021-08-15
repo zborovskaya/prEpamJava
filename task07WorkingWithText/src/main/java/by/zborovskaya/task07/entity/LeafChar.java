@@ -16,6 +16,14 @@ public class LeafChar implements ComponentText{
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LeafChar)) return false;
+        LeafChar that = (LeafChar) o;
+        return symbol== that.getSymbol();
+    }
+
     public char getSymbol() {
         return symbol;
     }
@@ -23,6 +31,4 @@ public class LeafChar implements ComponentText{
     public String collect(String del) {
         return DELIMiTER_SYMBOL + symbol;
     }
-
-
 }

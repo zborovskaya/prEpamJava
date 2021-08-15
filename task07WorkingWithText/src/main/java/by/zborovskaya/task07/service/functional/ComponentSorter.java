@@ -6,6 +6,11 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ComponentSorter {
+    /**
+     * Sorts paragraphs by number of sentences.
+     * @param textComposite
+     * @return sorted text
+     */
 
     public BaseComposite sortParagraphs( BaseComposite textComposite)  {
 
@@ -17,6 +22,12 @@ public class ComponentSorter {
 
         return textClone;
     }
+
+    /**
+     * Sort words by length in each sentence.
+     * @param textComposite
+     * @return sorted text
+     */
 
     public BaseComposite sortWordsInSentences(BaseComposite textComposite) {
 
@@ -33,6 +44,14 @@ public class ComponentSorter {
         }
         return textClone;
     }
+
+    /**
+     * Sort lexemes in the text in descending order of the number of occurrences of a given character,
+     * and in case of equality, alphabetically.
+     * @param textComposite
+     * @param symbol
+     * @return sorted text
+     */
 
     public BaseComposite sortLexemesInText(CompositeText textComposite, char symbol){
         TextOfLexemes textOfLexemes=new TextOfLexemes();

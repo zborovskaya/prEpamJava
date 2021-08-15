@@ -9,6 +9,11 @@ import org.apache.logging.log4j.Logger;
 public class CompositeTextCreator {
     private static final Logger logger = LogManager.getLogger(CompositeTextCreator.class);
 
+    /**
+     * Receives text and creates CompositeText
+     * @param path
+     * @return
+     */
     public CompositeText create(String path ){
         //"./task07WorkingWithText/data/inputData.txt"
         CompositeText compositeText=null;

@@ -16,7 +16,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-public class CandiesDomBuilder {
+public class
+CandiesDomBuilder {
     private Set<Candy> candies;
     private DocumentBuilder docBuilder;
     public CandiesDomBuilder() {

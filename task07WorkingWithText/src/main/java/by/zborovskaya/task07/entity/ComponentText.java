@@ -6,3 +6,4 @@ public interface ComponentText {
     String collect(String del);
     ArrayList<ComponentText> getListOfChildren();
 }
+

@@ -26,6 +26,12 @@ abstract public class BaseComposite implements ComponentText{
 
     public abstract BaseComposite clone();
 
+    /**
+     * The function collects text
+     * @param del
+     * @return
+     */
+
     @Override
     public String collect(String del) {
         int length=components.size()-1;
@@ -47,9 +53,16 @@ abstract public class BaseComposite implements ComponentText{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BaseComposite)) return false;
+        if (!(o instanceof BaseComposite)) {
+            return false;
+        }
         BaseComposite that = (BaseComposite) o;
-        return components.equals(that.components);
+        for(int i=0; i<components.size();i++){
+            if(components.get(i).equals(that.components.get(i))==false) {
+                return false;
+            }
+        }
+       return true;
     }
 
     @Override

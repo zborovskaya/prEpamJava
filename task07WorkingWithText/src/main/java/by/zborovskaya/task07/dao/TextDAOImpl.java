@@ -15,12 +15,11 @@ public class TextDAOImpl implements TextDAO{
     /**
      * Function read data from file
      * @param path
-     * @return
+     * @return String value
      */
 
     @Override
     public String readData(String path) {
-        //String PATH="./task07WorkingWithText/data/inputData.txt"
 
         String txt = null;
         try {
@@ -33,36 +32,4 @@ public class TextDAOImpl implements TextDAO{
         return txt;
     }
 
-//    public static void main(String[] args) {
-////        TextDAOImpl textDAO=new TextDAOImpl();
-////        String data =textDAO.readData("./task07WorkingWithText/data/inputData.txt");
-////        System.out.println(data);
-//        String data="It has survived - not only (five) centuries, but also the leap into 13<<2 electronic typesetting, " +
-//                "remaining 30>>>3 essentially ~6&9|(3&4) unchanged. It was popularised in the 5|(1&2&(3|(4&(25^5|6&47)" +
-//                "|3)|2)|1) with the release of Letraset sheets containing Lorem Ipsum passages," +
-//                " and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." +
-//                "\n" +
-//                "\tIt is a long established fact that a reader will be distracted by the readable content of a page" +
-//                " when looking at its layout. The point of using (~71&(2&3|(3|(2&1>>2|2)&2)|10&2))|78 " +
-//                "Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using (Content here)," +
-//                " content here', making it look like readable English.\n" +
-//                "\tIt is a (111^5|1&2<<(2|5>>2&71))|1200 established fact that a reader will be of a page " +
-//                "when looking at its layout.\n" +
-//                "\tBye.";
-////        String[] parameters = data.trim().split("(\\s*\\b\\s*)|\\s+");
-////        for(String parameter: parameters) System.out.println(parameter);
-//
-////        Pattern pattern = Pattern.compile("\\.(?!\\.)|[\\!\\?\\-\\:\\;\\,]");
-////
-////        Pattern pattern = Pattern.compile("[^-!?:;,.()\\s+]");
-//        //Выражение для разделения лексемы на слова
-////        Pattern pattern = Pattern.compile("\\.{3}|\\!\\?|\\?!|[-!?:;,.]|(?<=[a-zA-Z])\\)|[a-zA-Z]+");
-//
-//// Регулярное выражение для выражения
-//        Pattern pattern = Pattern.compile("(\\(?)([a-zA-Z]+(-?))+(\\)?)|\\.{3}|!\\?|\\?!|[-!?:;,.]");
-//
-//        Matcher matcher = pattern.matcher(data);
-//        while(matcher.find())
-//            System.out.println(matcher.group());
-//    }
 }
