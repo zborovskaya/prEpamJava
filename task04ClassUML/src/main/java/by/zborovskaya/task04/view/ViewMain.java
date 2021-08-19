@@ -12,7 +12,7 @@ import java.util.Scanner;
 /**
  * @author Zborovskaya Anna
  * Class {@code ViewMain} starts tasks
- *The view forms a request - a string of a certain type, passes it to the controller
+ *The by.zborovskaya.task08.view forms a request - a string of a certain type, passes it to the controller
  * and waits for a response.
  */
 

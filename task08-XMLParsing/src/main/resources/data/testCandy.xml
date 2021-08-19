@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.zborovskaya.by/task08/entities"
+         xsi:schemaLocation="http://www.zborovskaya.by/task08/entities candy.xsd">
+    <caramelCandy marking="chupa1234">
+        <dateProduction>2020-09-24</dateProduction>
+        <name>Chupa-Chups</name>
+        <energy>380</energy>
+        <production>Chupa-Chups</production>
+        <value>
+            <proteins>0.2</proteins>
+            <fats>0</fats>
+            <carbohydrates>94</carbohydrates>
+        </value>
+        <ingredientsCaramel>
+            <water>5</water>
+            <sugar>30</sugar>
+            <fructose>5</fructose>
+            <vanillin>5</vanillin>
+        </ingredientsCaramel>
+    </caramelCandy>
+    <chocolateCandy marking="shapka1235">
+        <dateProduction>2021-05-24</dateProduction>
+        <name>Little Red Riding Hood</name>
+        <energy>300</energy>
+        <production>Kommunarka</production>
+        <value>
+            <proteins>0.3</proteins>
+            <fats>0.1</fats>
+            <carbohydrates>90</carbohydrates>
+        </value>
+        <ingredientsChocolate>
+            <water>3</water>
+            <sugar>20</sugar>
+            <fructose>5</fructose>
+            <vanillin>5</vanillin>
+            <chocolateType>milk</chocolateType>
+        </ingredientsChocolate>
+    </chocolateCandy>
+</candies>

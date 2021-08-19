@@ -1,0 +1,24 @@
+
+
+html {
+    font-size: 10px;
+}
+header h2 {
+    text-align: center;
+    font-size: 5rem;
+}
+
+body {
+    font-size: 2rem;
+    color: #595959;
+    background-color: beige;
+}
+
+main {
+    font-size: 4rem;
+    margin: 2rem;
+}
+
+a {
+    text-decoration: none;
+}

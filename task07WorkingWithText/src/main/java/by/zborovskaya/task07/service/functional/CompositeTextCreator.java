@@ -22,13 +22,19 @@ public class CompositeTextCreator {
             WordParser wordParser=new WordParser();
             LexemeParser lexemeParser=new LexemeParser(wordParser);
             SentenceParser sentenceParser=new SentenceParser(lexemeParser);
-            ParagraphParser paragraphParser=new ParagraphParser(sentenceParser);
+            ParagraphParser paragraphParser=new ParagraphParser(lexemeParser);
             TextParser textParser=new TextParser(paragraphParser);
             compositeText=new CompositeText();
             textParser.parse(data,compositeText);
+//            lexemeParser.parse(data,compositeText);
         }catch (Exception ex){
             logger.error("Error in CompositeTextCreator.");
         }
         return compositeText;
+    }
+    public static void main(String[] args) {
+        CompositeTextCreator compositeTextCreator=new CompositeTextCreator();
+        CompositeText compositeText=compositeTextCreator.create("./task07WorkingWithText/data/inputData.txt");
+        System.out.println(compositeText.collect(""));
     }
 }

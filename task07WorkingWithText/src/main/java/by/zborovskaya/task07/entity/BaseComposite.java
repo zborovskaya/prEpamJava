@@ -57,6 +57,7 @@ abstract public class BaseComposite implements ComponentText{
             return false;
         }
         BaseComposite that = (BaseComposite) o;
+        //TODO проверять на кол-во эле-ов components.size
         for(int i=0; i<components.size();i++){
             if(components.get(i).equals(that.components.get(i))==false) {
                 return false;

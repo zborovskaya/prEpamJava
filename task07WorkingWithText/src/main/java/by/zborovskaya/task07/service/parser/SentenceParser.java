@@ -4,6 +4,7 @@ import by.zborovskaya.task07.entity.BaseComposite;
 import by.zborovskaya.task07.entity.CompositeLexeme;
 
 public class SentenceParser extends Handler {
+    private static final String SENTENCE_PATTERN ="\\s+";
 
     public SentenceParser() {
         super();
@@ -15,7 +16,7 @@ public class SentenceParser extends Handler {
 
     @Override
     public void parse(String data, BaseComposite sentenceComposite){
-        String[] lexemes = data.trim().split("\\s+");
+        String[] lexemes = data.trim().split(SENTENCE_PATTERN);
         if(checkNext()){
             for (String lexeme:lexemes){
                 CompositeLexeme compositeLexeme=new CompositeLexeme();

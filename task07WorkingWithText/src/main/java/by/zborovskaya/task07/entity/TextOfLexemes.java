@@ -3,7 +3,7 @@ package by.zborovskaya.task07.entity;
 import java.util.ArrayList;
 
 public class TextOfLexemes extends BaseComposite{
-    private final  String DELIMiTER_SENTENCE=" ";
+    private final  String DELIMiTER_LEXEME=" ";
 
     public void fill(CompositeText compositeText){
         ArrayList<ComponentText> paragraphs=compositeText.getListOfChildren();
@@ -17,7 +17,7 @@ public class TextOfLexemes extends BaseComposite{
     }
     @Override
     public String collect(String del) {
-        return super.collect(DELIMiTER_SENTENCE);
+        return super.collect(DELIMiTER_LEXEME);
     }
 
     @Override

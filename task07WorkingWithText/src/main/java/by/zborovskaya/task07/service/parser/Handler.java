@@ -13,15 +13,26 @@ abstract public class Handler {
         this.next = handler;
     }
 
+    /**
+     * Parses data
+     * @param data
+     * @param composite
+     */
+
     public abstract void parse(String data, BaseComposite composite);
 
     /**
-     * Запускает проверку в следующем объекте или завершает проверку, если мы в
-     * последнем элементе цепи.
+     * Starts the check in the next object or ends the check if we are in
+     * last element in the chain.
      */
     protected void parseNext(String data,BaseComposite composite) {
             next.parse(data, composite);
     }
+
+    /**
+     * Checks for null the following parser
+     * @return
+     */
 
     protected boolean checkNext() {
         return next!=null;
